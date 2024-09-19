@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <header>
+        <h1>Catalog</h1>
+    </header>
+    <main>
+        <div id="content-container">
+            <div id="add-product">
+                <button>Cadastrar Produto</button>
+            </div>
+
+            <div id="modal-container">
+                <div id="modal">
+                    <button id="close">X</button>
+
+                    <form action="" method="post" autocomplete="off">
+                        <label for="iproduct">Produto: </label>
+                        <input type="text" name="product" id="iproduct"><br>
+                        <label for="iprice">Preço:</label>
+                        <input type="number" name="price" id="iprice"><br>
+                        <label for="icategory">Categoria: </label>
+                        <select name="category" id="icategory"><br>
+                            <option value="relogios">Relógios</option>
+                            <option value="camisetas">Camisetas</option>
+                            <option value="bermudas">Bermudas</option>
+                            <option value="calcados">Calçados</option>
+                            <option value="bones">Bonés</option>
+                            <option value="jaquetas">Jaquetas</option>
+                        </select>
+                    </form>
+
+                    <div id="btn">
+                        <button id="btn-cadastrar">Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="products-container">
+                <div class="products-list">
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Feito por Ruan Mateus</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
