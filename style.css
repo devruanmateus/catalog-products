@@ -49,6 +49,7 @@ div#add-product-container button:hover {
 }
 
 div#products-container {
+    width: 75%;
     margin-top: 20px;
     background-color: #E6E6E6;
 }
@@ -119,7 +120,7 @@ select {
 
 #label-upload-img {
     font-size: 13px;
-    width: 140px;
+    width: 110px;
     padding: 5px;
     border-radius: 5px;
     border: 0;
@@ -190,11 +191,13 @@ select {
     width: 95px;
     height: auto;
     object-fit: contain;
+    cursor: pointer;
 }
 
 .product-name {
     font-size: 22px;
     font-weight: bolder;
+    cursor: pointer;
 }
 
 .product-price {
@@ -211,4 +214,19 @@ select {
 
 .category-icon {
     margin-right: 5px;
+}
+
+.products {
+    position: relative;
+}
+
+.remove-product {
+    position: absolute;
+    top: 10px;  /* Ajuste conforme necessário */
+    right: 10px; /* Ajuste conforme necessário */
+    cursor: pointer;
+    color: #7C7C7C;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
 }
