@@ -13,13 +13,15 @@
     </header>
     <main>
         <div id="content-container">
-            <div id="add-product">
-                <button>Cadastrar Produto</button>
+            <div id="add-product-container">
+                <button id="add-product">Cadastrar Produto</button>
             </div>
 
             <div id="modal-container">
                 <div id="modal">
                     <button id="close">X</button>
+
+                    <p id="alerts"></p>
 
                     <form action="" method="post" autocomplete="off">
                         <label for="iproduct">Produto: </label>
@@ -28,14 +30,18 @@
                         <input type="number" name="price" id="iprice"><br>
                         <label for="icategory">Categoria: </label>
                         <select name="category" id="icategory"><br>
-                            <option value="relogios">Relógios</option>
-                            <option value="camisetas">Camisetas</option>
-                            <option value="bermudas">Bermudas</option>
-                            <option value="calcados">Calçados</option>
-                            <option value="bones">Bonés</option>
-                            <option value="jaquetas">Jaquetas</option>
+                            <option value="Relógios">Relógios</option>
+                            <option value="Camisetas">Camisetas</option>
+                            <option value="Bermudas">Bermudas</option>
+                            <option value="Calçados">Calçados</option>
+                            <option value="Bonés">Bonés</option>
+                            <option value="Jaquetas">Jaquetas</option>
                         </select>
+
+                        <label id="label-upload-img" for="upload-img">Selecionar uma imagem</label>
+                        <input type="file" id="upload-img">
                     </form>
+
 
                     <div id="btn">
                         <button id="btn-cadastrar">Cadastrar</button>
@@ -44,8 +50,10 @@
             </div>
 
             <div id="products-container">
-                <div class="products-list">
-                    
+                <div id="products-list">
+                    <li style="display: none;" class="products">
+                        <img id="preview" src="" alt="Imagem do Produto" width="100"/>
+                    </li>
                 </div>
             </div>
         </div>
