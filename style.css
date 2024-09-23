@@ -16,13 +16,14 @@ body {
 
 header {
     text-align: center;
-    padding: 20px 0px 50px 0px;
+    padding: 20px 0px 25px 0px;
+    border-bottom: 1px solid black;
+
 }
 
 main {
+    display: flex;
     flex: 1;
-    margin: auto;
-    width: 80%;
 }
 
 footer {
@@ -36,9 +37,20 @@ footer {
     margin-top: 120px;
 }
 
+#content-container {
+    width: 80%;
+    margin: auto;
+}
 
 /* Estilização do modal e formulário (popup para cadastro de produtos) */
+div#add-product-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
 div#add-product-container button {
+    margin-right: 10px;
     padding: 10px;
     background-color: #ffffff00;
     cursor: pointer;
@@ -48,10 +60,17 @@ div#add-product-container button:hover {
     background-color: #87878717;
 }
 
+#filter:hover {
+    color: #808080;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
 div#products-container {
     width: 75%;
     margin-top: 20px;
     background-color: #E6E6E6;
+    word-break: break-all;
 }
 
 #modal-container {
@@ -182,7 +201,7 @@ select {
     border-radius: 15px;
 }
 
-/* */
+/* Estilo de preview do produto */
 #products-list li p span {
     margin-bottom: 5px;
 }
@@ -222,11 +241,44 @@ select {
 
 .remove-product {
     position: absolute;
-    top: 10px;  /* Ajuste conforme necessário */
-    right: 10px; /* Ajuste conforme necessário */
+    top: 10px;
+    right: 10px;
     cursor: pointer;
     color: #7C7C7C;
     border: none;
     padding: 5px;
     border-radius: 3px;
+}
+
+/* Estilo da caixa de classificação de produtos */
+#menu-classifier {
+    display: flex;
+    padding: 10px;
+    height: 70%;
+}
+
+#menu-classifier {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 1;
+    right: 0px; /* Começa oculto fora da tela */
+    width: 300px;
+    height: 50vh;
+    background-color: #f1f1f1;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease; /* Animação ao abrir e fechar */
+    z-index: 1;
+    padding: 20px;
+}
+
+#classifier h1 {
+    font-size: 20px;
+}
+
+/* Estilo do seletor */
+#classifier select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
