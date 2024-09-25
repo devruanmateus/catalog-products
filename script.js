@@ -20,10 +20,7 @@ document.querySelector('#add-product').addEventListener('click', function() {
 })
 
 // Array criado para armazenar os produtos adicionados pelo usuário
-let products = [
-    { id: 1, name: 'Camiseta Azul', category: 'Camisetas', price: 80, imageUrl: '' }, 
-    { id: 2, name: 'Air Jordan 1 High OG', category: 'Calçados', price: 750, imageUrl: '' },
-]
+let products = []
 
 // Função para publicar o produto descrito pelo usuário
 function publishProduct(product) {
@@ -113,7 +110,6 @@ function removeProduct(id) {
     // Remove o produto do array de produtos
     products = products.filter(product => product.id !== id);
 
-    // Remove o produto do DOM
     let productElement = document.querySelector(`[data-id='${id}']`);
     if (productElement) {
         productElement.remove();
@@ -128,3 +124,36 @@ document.querySelector('#products-list').addEventListener('click', function(even
     }
 });
 
+// Evento para abrir barra lateral de filtro de categorias
+document.querySelector('#filter').addEventListener('click', function() {
+    const body = document.querySelector('body');
+    const sidebar = document.querySelector('#classifier');
+    const contentOutside = document.querySelector('#content-container');
+    const closeFilter = document.querySelector('#close-filter')
+
+    sidebar.classList.toggle('open');
+
+    closeFilter.addEventListener('click', function() {
+        sidebar.classList.remove('open');
+    })
+})
+
+// Evento para filtrar produtos
+document.querySelector('#iclassifier-category').addEventListener('change', function() {
+    let selectedCategory = document.querySelector('#iclassifier-category').value
+    
+    productsList = document.querySelector('#products-list');
+    productsList.innerHTML = '';
+
+    if (selectedCategory === 'Todas') {
+        products.forEach(product => {
+            publishProduct(product)
+        })
+    } else {
+        let filteredProducts = products.filter(product => product.category === selectedCategory);
+
+        filteredProducts.forEach(product => {
+            publishProduct(product);
+        })
+    }
+});

@@ -38,15 +38,18 @@ footer {
 }
 
 #content-container {
+    width: 100%;
+    height: 100%;
     width: 80%;
     margin: auto;
+    
 }
 
 /* Estilização do modal e formulário (popup para cadastro de produtos) */
 div#add-product-container {
     display: flex;
     align-items: center;
-    position: relative;
+    margin-top: 20px;
 }
 
 div#add-product-container button {
@@ -251,34 +254,66 @@ select {
 }
 
 /* Estilo da caixa de classificação de produtos */
-#menu-classifier {
-    display: flex;
-    padding: 10px;
-    height: 70%;
-}
-
-#menu-classifier {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 1;
-    right: 0px; /* Começa oculto fora da tela */
-    width: 300px;
-    height: 50vh;
-    background-color: #f1f1f1;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    transition: right 0.3s ease; /* Animação ao abrir e fechar */
-    z-index: 1;
+#classifier {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: white;
     padding: 20px;
+    transition: 0.3s ease;
+    z-index: 998;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
 }
 
 #classifier h1 {
     font-size: 20px;
+    margin-top: 50px;
 }
 
-/* Estilo do seletor */
+/* Seletor */
 #classifier select {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+}
+
+#classifier.open {
+    transform: translateX(0px);
+    left: 0;
+}
+
+/* Botão para fechar barra lateral */
+#close-filter {
+    position: absolute;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding: 5px;   
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 10px;
+    border-radius: 50%;
+}
+
+#close-filter:hover {
+    background-color: red;
+}
+
+#close-filter span {
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Visualização responsiva para dispositivos móveis */
+@media screen and (max-width: 700px) {
+    #content-container {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+    }
 }
